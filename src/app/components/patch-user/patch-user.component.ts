@@ -34,7 +34,8 @@ OriginalUser : User;
   onSubmit() {
     const patch = compare(this.OriginalUser, this.model);
     console.log(patch);
-
+    this.userService.patchUser(this.model.id, patch).
+    subscribe(r => console.log(r)); 
   }
 
 }
