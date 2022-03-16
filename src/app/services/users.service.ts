@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { User } from '../model/user';
+import { Operation } from 'fast-json-patch';
 
 @Injectable({
   providedIn: 'root'
@@ -42,5 +43,20 @@ BaseURL = environment.urlApi+'users/';
 
   createUser(user : User ):Observable<User>{
     return this.http.post<User>(this.BaseURL, user)
+  }
+
+  updateUser(user : User):Observable<User>{
+    const url = this.BaseURL + user.id;
+    return this.http.put<User>(url, user);
+  }
+
+  delUser(id: number):Observable<any>{
+    const url = this.BaseURL + id;
+    return this.http.delete(url)
+  }
+
+  patchUser(id:number, operations : Operation[]){
+    const url = this.BaseURL + id;
+    return this.http.patch(url, operations)
   }
 }

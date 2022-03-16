@@ -8,13 +8,15 @@ import { UsersComponent } from './components/users/users.component';
 import { ListarUsersComponent } from './components/listar-users/listar-users.component';
 import { AuthService } from './services/auth.service';
 import { CrearComponent } from './components/crear/crear.component';
+import { PatchUserComponent } from './components/patch-user/patch-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     ListarUsersComponent,
-    CrearComponent
+    CrearComponent,
+    PatchUserComponent
   ],
   imports: [
     BrowserModule,
