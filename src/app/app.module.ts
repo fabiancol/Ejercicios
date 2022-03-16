@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
 import { ListarUsersComponent } from './components/listar-users/listar-users.component';
 import { AuthService } from './services/auth.service';
+import { CrearComponent } from './components/crear/crear.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    ListarUsersComponent
+    ListarUsersComponent,
+    CrearComponent
   ],
   imports: [
     BrowserModule,

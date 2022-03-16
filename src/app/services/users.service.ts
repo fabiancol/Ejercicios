@@ -39,4 +39,8 @@ BaseURL = environment.urlApi+'users/';
   getUsersWithHeaders(): Observable<any> {
     return this.http.get(this.BaseURL, { observe : 'response'});
   }
+
+  createUser(user : User ):Observable<User>{
+    return this.http.post<User>(this.BaseURL, user)
+  }
 }
