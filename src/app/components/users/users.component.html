@@ -1,0 +1,16 @@
+<input type="text" #textId>
+<button (click)="getUser(textId.value)">Buscar</button>
+
+<hr>
+
+<ng-container *ngIf="noFound">
+    No encontrado
+</ng-container>
+
+<ng-container *ngIf="user">
+    <div>id: {{user.id}}</div>
+    <div>name: {{user.name}}</div>
+    <div>username: {{user.usarname}}</div>
+</ng-container>
+
+
