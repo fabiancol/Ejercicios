@@ -35,4 +35,8 @@ BaseURL = environment.urlApi+'users/';
 
     return this.http.get<User[]>(this.BaseURL, {params});
   }
+
+  getUsersWithHeaders(): Observable<any> {
+    return this.http.get(this.BaseURL, { observe : 'response'});
+  }
 }

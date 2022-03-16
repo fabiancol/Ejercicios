@@ -15,9 +15,10 @@ users : User[] = [];
   ) { }
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe(
-      (u : User[])=>
-      { this.users = u; },
+    this.userService.getUsersWithHeaders().subscribe(
+      (response : any)=> {
+        console.log(response) 
+        this.users = response.body },
       e => console.error(e) 
     );
   }
