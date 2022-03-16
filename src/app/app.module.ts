@@ -5,11 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
+import { ListarUsersComponent } from './components/listar-users/listar-users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent
+    UsersComponent,
+    ListarUsersComponent
   ],
   imports: [
     BrowserModule,

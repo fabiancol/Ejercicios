@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { User } from '../model/user';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +18,9 @@ BaseURL = environment.urlApi+'users/';
     const url = this.BaseURL + id;
     return this.http.get<User>(url);
     console.log("rta", this.http.get<User>(url));
-    
+  }
 
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.BaseURL);
   }
 }
