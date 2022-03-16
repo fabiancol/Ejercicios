@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { User } from '../model/user';
 
@@ -21,6 +21,18 @@ BaseURL = environment.urlApi+'users/';
   }
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.BaseURL);
+    //Metodo con Headers
+    // const headers = new HttpHeaders({
+    //   'Autorization' : 'bearer token',
+    //   'X-pagination' : '2'
+    // });
+
+    // return this.http.get<User[]>(this.BaseURL, {headers});
+
+    //Query String
+       let params = new HttpParams()
+       params = params.append('X-pagination', '4')
+
+    return this.http.get<User[]>(this.BaseURL, {params});
   }
 }
